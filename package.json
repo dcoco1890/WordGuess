@@ -1,0 +1,19 @@
+{
+  "name": "wordguess",
+  "version": "1.0.0",
+  "description": "Word guessing game using node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcoco1890/WordGuess.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dcoco1890/WordGuess/issues"
+  },
+  "homepage": "https://github.com/dcoco1890/WordGuess#readme"
+}
