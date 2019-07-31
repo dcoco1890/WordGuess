@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dcoco1890/WordGuess/issues"
   },
-  "homepage": "https://github.com/dcoco1890/WordGuess#readme"
+  "homepage": "https://github.com/dcoco1890/WordGuess#readme",
+  "dependencies": {
+    "random-words": "^1.1.0"
+  }
 }
