@@ -24,11 +24,11 @@ var Word = function() {
 
         // this is an array to hold the word we're going to show the user. Depending on whether
         // or not the letter has been guessed, we either push a "_", or the the actual letter
-        for (var i = 0; i < letters.length; i++) {
-            if (this.letters[i].isGuessed === true) {
+        // for (var i = 0; i < letters.length; i++) {
+        //     if (this.letters[i].isGuessed === true) {
 
-            }
-        }
+        //     }
+        // }
         var theWord = this.letters.join(" ");
         console.log(theWord);
     }

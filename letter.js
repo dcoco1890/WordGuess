@@ -3,17 +3,10 @@ var Letter = function(character) {
     this.isGuessed = false;
 
     this.correctCheck = function(guess) {
-        console.log(`\nYour Guess ====> ${guess}`);
-        if (guess === this.character) {
-            console.log("is CORRECT!");
-            this.isGuessed = true;
-        } else {
-            console.log("is WRONG!");
-        }
+        if (guess === this.character) this.isGuessed = true;
+
     }
-
 }
-
 Letter.prototype.toString = function() {
     var lete = "_"
     if (this.isGuessed) {
