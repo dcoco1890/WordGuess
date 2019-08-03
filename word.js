@@ -5,7 +5,7 @@ var randomWords = require('random-words');
 
 var Word = function() {
     var letters = [];
-    // getting a random word from the node module random word
+    // getting a random word from the node module random-words
     var word = randomWords();
     this.word = word;
     //splitting it with a space into an array
@@ -22,23 +22,11 @@ var Word = function() {
 
     this.showLetters = function() {
 
-        // this is an array to hold the word we're going to show the user. Depending on whether
-        // or not the letter has been guessed, we either push a "_", or the the actual letter
-        // for (var i = 0; i < letters.length; i++) {
-        //     if (this.letters[i].isGuessed === true) {
-
-        //     }
-        // }
+        // created a variable from the Letters to string property and logs
+        // it for the user to see. 
         var theWord = this.letters.join(" ");
         console.log(theWord);
     }
-
-
-
 }
 
-// var g = new Word;
-// g.letters[0].isGuessed = true;
-// console.log(g.letters[0].character);
-// g.showLetters();
 module.exports = Word;

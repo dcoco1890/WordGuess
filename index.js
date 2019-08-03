@@ -5,6 +5,7 @@ const regg = /\b[a-z]/; // regex to match a single char at the beginning of a st
 var cWord = new Word;
 let chars = [];
 let remainingGuesses = 5;
+let hasWon = false;
 
 // pushes the characters from the letter into an array
 for (var i = 0; i < cWord.letters.length; i++) {
@@ -27,23 +28,38 @@ var questions = [{
     }
 }];
 
+var questions2 = [{
+    name: "escape",
+    type: "confirm",
+    message: "Play again?",
+    default: true
+}];
+
 function reset() {
-    var cWord = new Word;
-    let chars = [];
-    let remainingGuesses = 5;
+
+    chars = [];
+    remainingGuesses = 5;
+
     for (var i = 0; i < cWord.letters.length; i++) {
         // pushes the characters from the letter into an array
         chars.push(cWord.letters[i].character);
     }
 
-    playGame();
+    playGame(hasWon);
 
 }
 
 
 
 // main game function
-function playGame() {
+function playGame(won) {
+
+    // needed this to create a new word if the player has played before
+    if (won) {
+        var newWord = new Word;
+        cWord = newWord;
+        hasWon = false
+    }
 
     cWord.showLetters();
     ui.log.write('enter ONLY a single character letter ("a" OR "b" etc..)');
@@ -68,7 +84,20 @@ function playGame() {
             // cWord.showLetters();
             playGame();
         });
-    };
+    } else {
+        if (hasWon) {
+            console.log("\nYou win!\n");
+        } else {
+            console.log("\nYou Lose and you're terrible!\n");
+        }
+
+        // setting has won to true here, either if the player has won or not
+        // I'm "reeusing" this variable to tell if the user has played before
+        hasWon = true;
+        inquirer.prompt(questions2).then(ans => {
+            if (ans.escape) reset();
+        });
+    }
 
 }
 
@@ -76,4 +105,4 @@ function playGame() {
 
 
 console.log("Welcome to Word Guess!\n----------------------------------\n");
-playGame();
+playGame(hasWon);
