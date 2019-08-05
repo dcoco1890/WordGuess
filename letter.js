@@ -16,8 +16,8 @@ Letter.prototype.toString = function() {
     }
 }
 
-var l = new Letter;
-l.character = "e";
+// var l = new Letter;
+// l.character = "e";
 
 
 module.exports = Letter;
